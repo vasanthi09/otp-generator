@@ -1,0 +1,25 @@
+#Random OTP generation
+
+import random
+number_range = [x for x in range (100000,1000000)]
+pop_range = []
+nums = []
+comps = []
+for i in range (10):
+    y = str(i)
+    nums.append(y)
+    comps.append(i-i)
+for i in number_range:
+    x = str(i)
+    for j in x:
+        index = nums.index (j) 
+        comps [index] = comps [index]+1
+    maxim = max (comps)
+    if(maxim <= 2):
+       rand = int(x)
+       pop_range.append(rand)
+    comps = []
+    for i in range (10):
+       comps.append(i-1)
+a = random.randint(0, len (number_range))
+print ("Your OTP is",number_range [a])
